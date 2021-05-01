@@ -4,16 +4,14 @@ def runner = { commandToExecute -> isUnix() ? sh(commandToExecute) : bat(command
 unitTest:{
     stage("Unit Testing"){
         node('MyNewNode'){
-            checkout("tests")
-            runner 'cd tests && mvn test -Dgroups=unitTesting'
+            runner 'mvn test -Dgroups=unitTesting'
         }
     }
 }
 IntegrationTest:{
     stage("Integration Testing"){
         node('MyNewNode'){
-            checkout("tests")
-            runner 'cd tests && mvn test -Dgroups=unitTesting'
+            runner 'mvn test -Dgroups=unitTesting'
         }
     }
 }
