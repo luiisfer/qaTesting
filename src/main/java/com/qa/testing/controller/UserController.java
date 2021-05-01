@@ -34,6 +34,7 @@ public class UserController {
 
     @PostMapping("/user")
     public boolean userAdd(@DefaultValue("0") @RequestParam(value = "name") String name, @DefaultValue("0") @RequestParam(value = "user") String user, @DefaultValue("0") @RequestParam(value = "password") String password) {
+        //@DefaultValue("0") @RequestParam(value = "name") String name, @DefaultValue("0") @RequestParam(value = "user") String user, @DefaultValue("0") @RequestParam(value = "password") String password
         return userClass.addedUser(name,user,password);
     }
 

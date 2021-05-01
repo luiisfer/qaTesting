@@ -34,7 +34,7 @@ public class UserClassNGTest {
     /**
      * Test of isLoggin method, of class UserClass.
      */
-    @Test
+    @Test(groups = {"unitTesting"})
     public void testIsLoggin() {
         System.out.println("isLoggin");
         final boolean actualResult = true;
@@ -46,7 +46,7 @@ public class UserClassNGTest {
     }
 //    
 
-    @Test
+    @Test(dependsOnMethods = {"testIsLoggin"}, groups = {"unitTesting"})
     public void testAddedUser() {
         System.out.println("addedUser");
         String name = "PruebasUni";
@@ -61,7 +61,7 @@ public class UserClassNGTest {
     }
 //    
 
-    @Test(description = "test deleted User", dependsOnMethods = {"testAddedUser"})
+    @Test(description = "test deleted User", dependsOnMethods = {"testAddedUser"} ,groups = {"unitTesting"})
     public void testDeletedUser() {
         System.out.println("deletedUser");
         String user = "PruebasUni";

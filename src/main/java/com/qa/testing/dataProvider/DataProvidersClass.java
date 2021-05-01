@@ -8,7 +8,6 @@ package com.qa.testing.dataProvider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
 
 /**
@@ -21,10 +20,10 @@ public class DataProvidersClass {
     public Iterator<Object[]> getParameters() {
         Collection<Object[]> data = new ArrayList<>();
         for (int i = 0; i < 10; i++){
-            JSONObject bodyContent = new JSONObject();
-            bodyContent.put("username","username"+i);
-            bodyContent.put("firstname","firstname"+i);
-            data.add(new Object[]{bodyContent.toString()});
+            String name = "name"+i;
+            String user = "user"+i;
+            String password = "password"+i;
+            data.add(new Object[]{name,user,password});
         }
         return data.iterator();
     }

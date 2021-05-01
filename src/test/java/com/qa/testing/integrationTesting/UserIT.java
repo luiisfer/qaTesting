@@ -6,11 +6,10 @@
 package com.qa.testing.integrationTesting;
 
 
+
 import com.qa.testing.dataProvider.DataProvidersClass;
 import com.qa.testing.restassured.RequestMaker;
 import io.restassured.response.Response;
-import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -21,12 +20,28 @@ public class UserIT {
     
     
     @Test(dataProviderClass = DataProvidersClass.class, dataProvider = "getParameters")
-    public void getBYId(String bodyContent){
+    public void logeo(String name, String user, String password  ){
         
-        Response response = RequestMaker.makeGetRequest("http://localhost:8080/user/logeo?user=U&password=a");
+        Response response = RequestMaker.makeGetRequest("http://localhost:8080/user/logeo?user="+name+"&password="+password);
+        System.out.println("http://localhost:8080/user/logeo?user="+name+"&password="+password);
         String responseString = response.asString();
-        System.out.println("bodyContent " + bodyContent);
-        System.out.println(responseString);
+        System.out.println("logeo " +responseString);
+    }
+    
+    @Test
+    public void newUser(){
+        
+        Response response = RequestMaker.makePostRequest("http://localhost:8080/user/user/?name=U&user=U&password=123","");
+        String responseString = response.asString();
+        System.out.println("newUser " +responseString);
+    }
+    
+    @Test
+    public void deleteUser(){
+        
+        Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/user/user?user=U");
+        String responseString = response.asString();
+        System.out.println("deleteUser " +responseString);
     }
     
     
