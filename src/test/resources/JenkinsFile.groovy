@@ -5,7 +5,7 @@ unitTest:{
     stage("Unit Testing"){
         node('MyNewNode'){
             checkout("tests")
-            runner 'cd tests && mvn test -DincludeGroup=unitTesting'
+            runner 'cd tests && mvn test -Dgroups=unitTesting'
         }
     }
 }
@@ -13,7 +13,7 @@ IntegrationTest:{
     stage("Integration Testing"){
         node('MyNewNode'){
             checkout("tests")
-            runner 'cd tests && mvn test -DincludeGroup=unitTesting'
+            runner 'cd tests && mvn test -Dgroups=unitTesting'
         }
     }
 }
