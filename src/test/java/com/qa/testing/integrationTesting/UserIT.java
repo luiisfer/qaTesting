@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 public class UserIT {
     
     
-    @Test(dataProviderClass = DataProvidersClass.class, dataProvider = "getParameters")
+    @Test(dataProviderClass = DataProvidersClass.class, dataProvider = "getParameters" , groups = {"integrationTesting"})
     public void logeo(String name, String user, String password  ){
         
         Response response = RequestMaker.makeGetRequest("http://localhost:8080/user/logeo?user="+name+"&password="+password);
@@ -28,7 +28,7 @@ public class UserIT {
         System.out.println("logeo " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void newUser(){
         
         Response response = RequestMaker.makePostRequest("http://localhost:8080/user/user/?name=U&user=U&password=123","");
@@ -36,7 +36,7 @@ public class UserIT {
         System.out.println("newUser " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void deleteUser(){
         
         Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/user/user?user=U");

@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
  */
 public class ClientIT {
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void client(){
         
         Response response = RequestMaker.makeGetRequest("http://localhost:8080/client/client");
@@ -23,7 +23,7 @@ public class ClientIT {
         System.out.println("client " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void newClient(){
         
         Response response = RequestMaker.makePostRequest("http://localhost:8080/client/client?name=U&lastname=u&nit=a","");
@@ -31,7 +31,7 @@ public class ClientIT {
         System.out.println("newClient " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void deleteClient(){
         
         Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/client/client?name_client=U");

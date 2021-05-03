@@ -61,7 +61,7 @@ public class ProductNGTest {
     /**
      * Test of newProduct method, of class Product.
      */
-    @Test(description = "test Added Product", dependsOnMethods = {"testProduct"})
+    @Test(description = "test Added Product", dependsOnMethods = {"testProduct"}, groups = {"unitTesting"})
     public void testNewProduct() {
         System.out.println("newProduct");
         String name = "Producto1";
@@ -76,7 +76,7 @@ public class ProductNGTest {
     /**
      * Test of DelProduct method, of class Product.
      */
-    @Test(description = "test deleted Product", dependsOnMethods = {"testNewProduct"})
+    @Test(description = "test deleted Product", dependsOnMethods = {"testNewProduct"} , groups = {"unitTesting"})
     public void testDelProduct() {
         System.out.println("DelProduct");
         String name_product = "Producto1";

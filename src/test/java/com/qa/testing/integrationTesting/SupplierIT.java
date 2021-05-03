@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
  */
 public class SupplierIT {
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void supplier(){
         
         Response response = RequestMaker.makeGetRequest("http://localhost:8080/supplier/supplier");
@@ -23,7 +23,7 @@ public class SupplierIT {
         System.out.println("supplier " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void newSupplier(){
         
         Response response = RequestMaker.makePostRequest("http://localhost:8080/supplier/supplier?name=U&lastname=u&nit=a","");
@@ -31,7 +31,7 @@ public class SupplierIT {
         System.out.println("newSupplier " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void deleteSupplier(){
         
         Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/supplier/supplier?name_supplier=U");

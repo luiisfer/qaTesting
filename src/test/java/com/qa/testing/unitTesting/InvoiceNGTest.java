@@ -69,7 +69,7 @@ public class InvoiceNGTest {
     /**
      * Test of invoiceAdd method, of class Invoice.
      */
-    @Test(description = "test Added Invoice", dependsOnMethods = {"testShowInvoice"})
+    @Test(description = "test Added Invoice", dependsOnMethods = {"testShowInvoice"} , groups = {"unitTesting"})
     public void testInvoiceAdd() {
         System.out.println("invoiceAdd");
         String noSerie = "0001";
@@ -88,7 +88,7 @@ public class InvoiceNGTest {
     /**
      * Test of invoiceDelete method, of class Invoice.
      */
-    @Test(description = "test deleted Invoice", dependsOnMethods = {"testInvoiceAdd"})
+    @Test(description = "test deleted Invoice", dependsOnMethods = {"testInvoiceAdd"} , groups = {"unitTesting"})
     public void testInvoiceDelete() {
         System.out.println("invoiceDelete");
         String serial_number = "0001";

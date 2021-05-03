@@ -53,7 +53,7 @@ public class ClientNGTest {
     /**
      * Test of clientAdd method, of class Client.
      */
-    @Test(description = "test Added Client", dependsOnMethods = {"testShowClient"})
+    @Test(description = "test Added Client", dependsOnMethods = {"testShowClient"} , groups = {"unitTesting"})
     public void testClientAdd() {
         System.out.println("clientAdd");
         String name = "MarioM";
@@ -70,7 +70,7 @@ public class ClientNGTest {
     /**
      * Test of clientDelete method, of class Client.
      */
-    @Test(description = "test deleted Client", dependsOnMethods = {"testClientAdd"})
+    @Test(description = "test deleted Client", dependsOnMethods = {"testClientAdd"} , groups = {"unitTesting"})
     public void testClientDelete() {
         System.out.println("clientDelete");
         String name_client = "MarioM";

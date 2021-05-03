@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class InvoiceIT {
     
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void invoice(){
         
         Response response = RequestMaker.makeGetRequest("http://localhost:8080/invoice/invoice");
@@ -24,7 +24,7 @@ public class InvoiceIT {
         System.out.println("invoice " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void newInvoice(){
         
         Response response = RequestMaker.makePostRequest("http://localhost:8080/invoice/invoice?noSerie=U&fechaFactura=u&nombreCliente=a&nitCliente=aaab&total=25","");
@@ -32,7 +32,7 @@ public class InvoiceIT {
         System.out.println("newInvoice " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void deleteInvoice(){
         
         Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/invoice/invoice?serial_number=U");

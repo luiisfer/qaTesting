@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
  */
 public class ProductIT {
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void product(){
         
         Response response = RequestMaker.makeGetRequest("http://localhost:8080/product/product");
@@ -23,7 +23,7 @@ public class ProductIT {
         System.out.println("product " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void newProduct(){
         
         Response response = RequestMaker.makePostRequest("http://localhost:8080/product/product?name=U&lastname=u&price=18","");
@@ -31,7 +31,7 @@ public class ProductIT {
         System.out.println("newProduct " +responseString);
     }
     
-    @Test
+    @Test(groups = {"integrationTesting"})
     public void deleteProduct(){
         
         Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/product/product?name_product=U");

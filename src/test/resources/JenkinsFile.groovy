@@ -27,7 +27,7 @@ IntegrationTest:{
     stage("Integration Testing"){
         node('MyNewNode'){
             checkout("tests")
-            runner 'cd tests && mvn test -Dgroups=unitTesting'
+            runner 'cd tests && mvn test -Dgroups=integrationTesting'
         }
     }
 }

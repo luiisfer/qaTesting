@@ -61,7 +61,7 @@ public class SupplierNGTest {
     /**
      * Test of AddSupplier method, of class Supplier.
      */
-    @Test(description = "test Added Supplier", dependsOnMethods = {"testSupplier"})
+    @Test(description = "test Added Supplier", dependsOnMethods = {"testSupplier"} , groups = {"unitTesting"})
     public void testAddSupplier() {
         System.out.println("AddSupplier");
         String name = "Proveedor5";
@@ -77,7 +77,7 @@ public class SupplierNGTest {
     /**
      * Test of DelSupplier method, of class Supplier.
      */
-    @Test(description = "test deleted Supplier", dependsOnMethods = {"testAddSupplier"})
+    @Test(description = "test deleted Supplier", dependsOnMethods = {"testAddSupplier"} , groups = {"unitTesting"})
     public void testDelSupplier() {
         System.out.println("DelSupplier");
         String name_supplier = "Proveedor5";
