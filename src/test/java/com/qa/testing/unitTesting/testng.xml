@@ -19,12 +19,21 @@
     -->
     
     <test name="All tests for com.qa_testing_jar_0.0.1-SNAPSHOT">
+        <groups>
+            <run>
+                
+                <include name="unitTesting"/>
+                <include name="integrationTesting"/>
+            </run>
+        </groups>
         <packages>
             <package name=".*"/>
         </packages>
         <classes>
-            <class name="UserClassNGTest"/>
-            <class name="SupplierNGTest"/>
+            
+            <class name="integrationTesting.UserIT"/>
+            <class name="unitTesting.UserClassNGTest"/>
+            <class name="unitTesting.SupplierNGTest"/>
             
         </classes>
         

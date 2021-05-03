@@ -11,13 +11,32 @@ import com.qa.testing.dataProvider.DataProvidersClass;
 import com.qa.testing.restassured.RequestMaker;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
+
 
 /**
  *
  * @author NewUser
  */
+
 public class UserIT {
     
+    @BeforeClass
+    public void beforeClass() {
+        System.out.println("\n");
+        System.out.println("\nbefore class UserIT");
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        System.out.println("before method UserIT");
+    }
+    //integrationTesting.UserIT
     
     @Test(dataProviderClass = DataProvidersClass.class, dataProvider = "getParameters" , groups = {"integrationTesting"})
     public void logeo(String name, String user, String password  ){
@@ -42,6 +61,17 @@ public class UserIT {
         Response response = RequestMaker.makeDeleteRequest("http://localhost:8080/user/user?user=U");
         String responseString = response.asString();
         System.out.println("deleteUser " +responseString);
+    }
+    
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("After method. UserIT");
+    }
+
+    @AfterClass
+    public void afterClass() {
+        System.out.println("After class UserIT");
+        System.out.println("\n");
     }
     
     
