@@ -61,7 +61,8 @@ public class ProductNGTest {
     /**
      * Test of newProduct method, of class Product.
      */
-    @Test(description = "test Added Product", dependsOnMethods = {"testProduct"}, groups = {"unitTesting"})
+    //dependsOnMethods = {"testProduct"},
+    @Test(description = "test Added Product",  groups = {"unitTesting"})
     public void testNewProduct() {
         System.out.println("newProduct");
         String name = "Producto1";

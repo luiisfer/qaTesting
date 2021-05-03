@@ -46,7 +46,7 @@ public class UserClassNGTest {
     }
 //    
 
-    @Test(dependsOnMethods = {"testIsLoggin"}, groups = {"unitTesting"})
+    @Test(groups = {"unitTesting"})
     public void testAddedUser() {
         System.out.println("addedUser");
         String name = "PruebasUni";

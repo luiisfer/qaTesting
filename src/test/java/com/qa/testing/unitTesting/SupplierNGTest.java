@@ -61,7 +61,8 @@ public class SupplierNGTest {
     /**
      * Test of AddSupplier method, of class Supplier.
      */
-    @Test(description = "test Added Supplier", dependsOnMethods = {"testSupplier"} , groups = {"unitTesting"})
+    //dependsOnMethods = {"testSupplier"}
+    @Test(description = "test Added Supplier",   groups = {"unitTesting"})
     public void testAddSupplier() {
         System.out.println("AddSupplier");
         String name = "Proveedor5";

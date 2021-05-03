@@ -69,7 +69,8 @@ public class InvoiceNGTest {
     /**
      * Test of invoiceAdd method, of class Invoice.
      */
-    @Test(description = "test Added Invoice", dependsOnMethods = {"testShowInvoice"} , groups = {"unitTesting"})
+    //dependsOnMethods = {"testShowInvoice"} ,
+    @Test(description = "test Added Invoice",  groups = {"unitTesting"})
     public void testInvoiceAdd() {
         System.out.println("invoiceAdd");
         String noSerie = "0001";
